@@ -1,0 +1,26 @@
+package Parabank.pages;
+
+import Parabank.utils.GWD;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class OpenNewAccount {
+
+    public OpenNewAccount() {
+        PageFactory.initElements(GWD.getDriver(), this);
+    }
+
+    @FindBy(xpath = "//*[@href = 'openaccount.htm']")
+    public WebElement openAccountButton;
+
+    @FindBy(css = "#type.input")
+    public WebElement selectAccountType;
+
+    @FindBy(css = "a#newAccountId']")
+    public WebElement accIDIsVisible;
+
+    @FindBy(css = "input.button']")
+    public WebElement registerButtonS;
+
+}

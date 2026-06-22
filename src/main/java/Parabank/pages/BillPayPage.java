@@ -44,5 +44,4 @@ public class BillPayPage {
     @FindBy(xpath = "//*[@value='Send Payment']")
     public WebElement sendPaymentButton;
 
-
 }
