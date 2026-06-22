@@ -13,7 +13,7 @@ public class RegisterPage {
     }
 
     @FindBy(xpath = "//*[@href = 'register.htm;jsessionid=02EAC0F663517EEACAABB6084ED81D38']")
-    public WebElement registerButton;
+    public WebElement registerButtonS;
 
     @FindBy(css = "#customer.firstName")
     public WebElement firstName;
@@ -48,5 +48,7 @@ public class RegisterPage {
     @FindBy(css = "#repeatedPassword")
     public WebElement repeatedPassword;
 
+    @FindBy(xpath = "//input[@value=\"Register\"]")
+    public WebElement registerButtonE;
 
 }
