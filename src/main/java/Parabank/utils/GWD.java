@@ -9,7 +9,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class GWD {
 
-    public static  ThreadLocal<WebDriver> threads = new ThreadLocal<>();
+    public static ThreadLocal<WebDriver> threads = new ThreadLocal<>();
     public static WebDriverWait wait;
 
     public static WebDriver getDriver() {

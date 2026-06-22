@@ -5,14 +5,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RegisterPage {
 
-    public RegisterPage(){
+    public RegisterPage() {
         PageFactory.initElements(GWD.getDriver(), this);
 
     }
-
-
-
-
 
 
 }
