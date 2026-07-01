@@ -6,10 +6,12 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/java/features/Tests",
-        glue = "stepDefinitions"
+        glue = "stepDefinitions",
+        tags = "@accounts"
 )
 
 public class RegisterRun extends AbstractTestNGCucumberTests {
+
 
 
 
