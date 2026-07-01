@@ -66,9 +66,14 @@ public class RegisterSteps extends GWD {
         rp.repeatedPassword.sendKeys("gamzeo");
     }
 
+    @And("the user clicks register button")
+    public void clickRegisterE() {
+        rp.registerButtonE.click();
+    }
+
     @Then("the user must see success message")
     public void successRegister() {
-        rp.successRegister.click();
+        rp.successRegister.isDisplayed();
     }
 
 }
