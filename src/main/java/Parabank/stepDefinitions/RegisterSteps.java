@@ -5,6 +5,7 @@ import Parabank.utils.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 
 public class RegisterSteps extends GWD {
 
@@ -73,7 +74,9 @@ public class RegisterSteps extends GWD {
 
     @Then("the user must see success message")
     public void successRegister() {
-        rp.successRegister.isDisplayed();
+
+        Assert.assertTrue(rp.successRegister.isDisplayed());
+
     }
 
 }

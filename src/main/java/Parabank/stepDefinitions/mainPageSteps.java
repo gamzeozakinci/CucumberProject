@@ -22,6 +22,4 @@ public class mainPageSteps extends GWD {
         lp.loginButton.click();
 
     }
-
-
 }
