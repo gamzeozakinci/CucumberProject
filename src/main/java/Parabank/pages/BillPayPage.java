@@ -21,7 +21,7 @@ public class BillPayPage {
     public WebElement payeeStreet;
 
     @FindBy(xpath = "//*[@name='payee.address.city']")
-    public WebElement payeeAddress;
+    public WebElement payeeCity;
 
     @FindBy(xpath = "//*[@name='payee.address.state']")
     public WebElement payeeState;
