@@ -1,8 +1,10 @@
 package Parabank.stepDefinitions;
 
 import Parabank.pages.BillPayPage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
 
 public class billPay {
 
@@ -13,46 +15,60 @@ public class billPay {
         bp.billpayButton.click();
     }
 
-    @Then("User enters payee name {string}")
+    @And("User enters payee name {string}")
     public void entersPayee(String string) {
         bp.payeeName.sendKeys(string);
     }
 
-    @Then("User enters address {string}")
+    @And("User enters address {string}")
     public void entersAddress(String string) {
         bp.payeeStreet.sendKeys(string);
     }
 
-    @Then("User enters city {string}")
+    @And("User enters city {string}")
     public void entersCity(String string) {
         bp.payeeCity.sendKeys(string);
     }
 
-    @Then("User enters state {string}")
+    @And("User enters state {string}")
     public void entersState(String string) {
         bp.payeeState.sendKeys(string);
     }
 
-    @Then("User enters zipcode {string}")
+    @And("User enters zipcode {string}")
     public void entersZipcode(String string) {
         bp.payeeZipCode.sendKeys(string);
     }
 
-    @Then("User enters phone number {string}")
+    @And("User enters phone number {string}")
     public void entersPhone(String string) {
         bp.payeePhone.sendKeys(string);
     }
 
-    @Then("User enters account number {string}")
+    @And("User enters account number {string}")
     public void entersAccount(String string) {
         bp.payeeAccount.sendKeys(string);
     }
 
-    @Then("User verifies account number {string}")
+    @And("User verifies account number {string}")
     public void entersAccountV(String string) {
         bp.payeeVerifyAccount.sendKeys(string);
     }
 
+    @And("User enters amount {string}")
+    public void entersAmount(String string) {
+        bp.payeeAmount.sendKeys(string);
+    }
+
+    @And("User clicks send payment")
+    public void clickSend() {
+        bp.sendPaymentButton.click();
+    }
+
+    @Then("User verifies that the payment is complete")
+    public void verifyPaymentComplete() {
+        Assert.assertTrue(bp.verifyBillPay.isDisplayed());
+    }
 
 
 
