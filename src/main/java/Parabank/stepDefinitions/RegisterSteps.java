@@ -54,17 +54,17 @@ public class RegisterSteps extends GWD {
 
     @And("the user enters username")
     public void enterUsername() {
-        rp.username.sendKeys("gamzeo");
+        rp.username.sendKeys("gamzee");
     }
 
     @And("the user enters password")
     public void enterPassword() {
-        rp.password.sendKeys("gamzeo");
+        rp.password.sendKeys("gamze");
     }
 
     @And("the user enters password again")
     public void enterConfirmPassword() {
-        rp.repeatedPassword.sendKeys("gamzeo");
+        rp.repeatedPassword.sendKeys("gamze");
     }
 
     @And("the user clicks register button")
