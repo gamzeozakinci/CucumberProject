@@ -4,6 +4,7 @@ import Parabank.utils.GWD;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class OpenNewAccount {
 
@@ -15,12 +16,12 @@ public class OpenNewAccount {
     public WebElement openAccountButton;
 
     @FindBy(css = "#type.input")
-    public WebElement selectAccountType;
+    public Select selectAccountType;
 
-    @FindBy(css = "a#newAccountId']")
-    public WebElement accIDIsVisible;
-
-    @FindBy(css = "input.button']")
+    @FindBy(css = "input.button")
     public WebElement registerButtonS;
+
+    @FindBy(css = "#openAccountResult h1")
+    public WebElement openverify;
 
 }
