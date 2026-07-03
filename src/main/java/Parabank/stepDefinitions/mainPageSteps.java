@@ -17,7 +17,7 @@ public class mainPageSteps extends GWD {
     public void login() {
         lp = new LoginPage();
 
-        lp.username.sendKeys("gamzee");
+        lp.username.sendKeys("gamze");
         lp.password.sendKeys("gamze");
         lp.loginButton.click();
 

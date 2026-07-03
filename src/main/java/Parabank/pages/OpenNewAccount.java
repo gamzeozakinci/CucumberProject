@@ -16,7 +16,7 @@ public class OpenNewAccount {
     public WebElement openAccountButton;
 
     @FindBy(css = "#type.input")
-    public Select selectAccountType;
+    public WebElement selectAccountType;
 
     @FindBy(css = "input.button")
     public WebElement registerButtonS;

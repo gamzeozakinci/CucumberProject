@@ -1,15 +1,19 @@
 package Parabank.stepDefinitions;
 
 import Parabank.pages.BillPayPage;
+import Parabank.utils.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import java.time.Duration;
 
 import static Parabank.utils.GWD.wait;
 import static org.testng.Assert.assertTrue;
@@ -75,8 +79,13 @@ public class billPay {
 
     @Then("User verifies that the payment is complete")
     public void verifyPaymentComplete() {
-        WebElement usernameField = wait.until(ExpectedConditions.visibilityOf(bp.verifyBillPay));
-        assertTrue(bp.verifyBillPay.isDisplayed());
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.alertIsPresent());
+
+        Alert alert = GWD.getDriver().switchTo().alert();
+        alert.accept();
+        WebElement verify = wait.until(ExpectedConditions.visibilityOf(bp.verifyBillPay));
+        assertTrue(verify.isDisplayed());
 
     }
 }
