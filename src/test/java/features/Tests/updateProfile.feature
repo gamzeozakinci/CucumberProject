@@ -4,6 +4,7 @@ Feature: Update Profile
     Given User navigates to main page
     Given User logged in to website
 
+  @Contact @Accounts
   Scenario: User successfully changes contact info
     When User clicks update contact info
     And User changes name

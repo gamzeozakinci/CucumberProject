@@ -4,6 +4,7 @@ Feature: New Account
     Given User navigates to main page
     Given User logged in to website
 
+  @Accounts @Smoke @Regression
   Scenario: User Successfully opens a new account
     When User clicks to Open New Account
     And User chooses account type

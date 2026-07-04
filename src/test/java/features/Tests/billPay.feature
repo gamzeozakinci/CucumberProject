@@ -4,6 +4,7 @@ Feature: Pay Bill
     Given User navigates to main page
     Given User logged in to website
 
+  @Account @Smoke @Regression
   Scenario Outline: User successfully pays the bills
     When User clicks bill pay
     And User enters payee name "<payee>"

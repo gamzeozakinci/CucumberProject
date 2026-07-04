@@ -3,6 +3,7 @@ Feature: Login User
   Background:
     Given User navigates to main page
 
+  @Accounts @Smoke @Regression
   Scenario Outline: Succesful Login with Credentials
     When User enters username "<username>"
     And User enters password "<password>"

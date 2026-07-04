@@ -4,6 +4,7 @@ Feature: Transfer funds
     Given User navigates to main page
     Given User logged in to website
 
+  @Payment @Regression
   Scenario: User Succesfully transfers money to another account
     When User clicks transfer funds
     And User enters the amount to transfer

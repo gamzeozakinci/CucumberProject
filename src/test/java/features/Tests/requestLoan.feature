@@ -4,6 +4,7 @@ Feature: Request Loan
     Given User navigates to main page
     Given User logged in to website
 
+  @Loan @Accounts @Regression
   Scenario: User successfully request a loan
     When User clicks request loan
     And User enters amount of loan
