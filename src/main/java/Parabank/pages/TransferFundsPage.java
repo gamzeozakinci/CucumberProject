@@ -5,13 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TransferFunds {
-    public TransferFunds() {
+public class TransferFundsPage {
+    public TransferFundsPage() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
     @FindBy(xpath = "//*[@href='transfer.htm']")
-    public WebElement openAccountButton;
+    public WebElement transferFundsButton;
 
     @FindBy(css = "input#amount")
     public WebElement amount;
@@ -24,5 +24,8 @@ public class TransferFunds {
 
     @FindBy(css = "input.button")
     public WebElement transferButton;
+
+    @FindBy(css = "#showResult .title")
+    public WebElement verifyTransfer;
 
 }

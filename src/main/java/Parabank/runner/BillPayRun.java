@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/java/features/Tests/billPay.feature",
-        glue = "Parabank.stepDefinitions")
+        glue = {"Parabank.stepDefinitions", "Parabank.Hooks"})
 
 public class BillPayRun extends AbstractTestNGCucumberTests {
 }

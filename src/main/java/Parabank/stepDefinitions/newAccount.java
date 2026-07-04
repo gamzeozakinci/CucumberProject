@@ -1,13 +1,11 @@
 package Parabank.stepDefinitions;
 
-import Parabank.pages.OpenNewAccount;
+import Parabank.pages.OpenNewAccountPage;
 import Parabank.utils.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,7 +15,7 @@ import java.time.Duration;
 
 public class newAccount extends GWD {
 
-    OpenNewAccount ona = new OpenNewAccount();
+    OpenNewAccountPage ona = new OpenNewAccountPage();
 
     @When("User clicks to Open New Account")
     public void newAccClick() {

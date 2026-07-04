@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/java/features/Tests/newAccountRun",
-        glue = "Parabank.stepDefinitions"
+        glue = {"Parabank.stepDefinitions", "Parabank.Hooks"}
 )
 
 public class NewAccountRun extends AbstractTestNGCucumberTests {

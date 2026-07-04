@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ChangeInfo {
-    public ChangeInfo() {
+public class ChangeInfoPage {
+    public ChangeInfoPage() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 

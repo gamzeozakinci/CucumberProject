@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class OpenNewAccount {
+public class OpenNewAccountPage {
 
-    public OpenNewAccount() {
+    public OpenNewAccountPage() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 

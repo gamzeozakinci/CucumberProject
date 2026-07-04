@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/java/features/Tests/register.feature",
-        glue = "Parabank.stepDefinitions"
+        glue = {"Parabank.stepDefinitions", "Parabank.Hooks"}
 )
 public class RegisterRun extends AbstractTestNGCucumberTests {
 }

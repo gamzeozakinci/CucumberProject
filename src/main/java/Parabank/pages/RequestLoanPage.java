@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RequestLoan {
+public class RequestLoanPage {
 
-    public RequestLoan() {
+    public RequestLoanPage() {
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
