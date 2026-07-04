@@ -79,6 +79,7 @@ public class billPay {
 
     @Then("User verifies that the payment is complete")
     public void verifyPaymentComplete() {
+        System.out.println(GWD.getDriver().getPageSource());
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.alertIsPresent());
 
