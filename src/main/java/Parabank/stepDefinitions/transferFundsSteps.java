@@ -5,7 +5,10 @@ import Parabank.utils.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class transferFundsSteps extends GWD {
@@ -45,6 +48,7 @@ public class transferFundsSteps extends GWD {
 
     @Then("User must see transfer complete text")
     public void verifyTransfer() {
+        WebElement verify = wait.until(ExpectedConditions.visibilityOf(tf.verifyTransfer));
         Assert.assertTrue(tf.verifyTransfer.isDisplayed());
     }
 
