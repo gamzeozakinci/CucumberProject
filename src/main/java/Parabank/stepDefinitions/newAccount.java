@@ -35,7 +35,7 @@ public class newAccount extends GWD {
     public void openNewAccountButton() throws InterruptedException {
 
         WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(ona.registerButtonS)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(ona.registerButtonS));
         Thread.sleep(4000);
         ona.registerButtonS.click();
 
