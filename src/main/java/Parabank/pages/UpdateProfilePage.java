@@ -34,7 +34,7 @@ public class UpdateProfilePage {
     @FindBy(css = "#customer\\.phoneNumber")
     public WebElement phone;
 
-    @FindBy(css = "input\\.button")
+    @FindBy(css = "input.button")
     public WebElement updateButton;
 
     @FindBy(css = "#updateProfileResult .title")

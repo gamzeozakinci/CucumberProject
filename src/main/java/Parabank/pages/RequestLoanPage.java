@@ -12,7 +12,7 @@ public class RequestLoanPage {
     }
 
     @FindBy(xpath = "//*[@href='requestloan.htm']")
-    public WebElement openAccountButton;
+    public WebElement requestLoanButton;
 
     @FindBy(css = "input#amount")
     public WebElement loanAmount;
@@ -20,16 +20,13 @@ public class RequestLoanPage {
     @FindBy(css = "input#downPayment")
     public WebElement downPayment;
 
+    @FindBy(css = "#fromAccountId.input")
+    public WebElement accountSelect;
+
     @FindBy(css = "input.button")
     public WebElement applyButton;
 
-    @FindBy(css = "#customer.address.city")
-    public WebElement city;
+    @FindBy(css = "#requestLoanResult .title")
+    public WebElement verifyLoan;
 
-    @FindBy(css = "#customer.address.state")
-    public WebElement state;
-
-    @FindBy(css = "input.button")
-    public WebElement updateButton;
 }
-// oncesinde hesaba para atmak lazım

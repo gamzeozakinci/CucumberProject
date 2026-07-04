@@ -13,7 +13,7 @@ import org.testng.Assert;
 
 import java.time.Duration;
 
-public class newAccount extends GWD {
+public class newAccountSteps extends GWD {
 
     OpenNewAccountPage ona = new OpenNewAccountPage();
 

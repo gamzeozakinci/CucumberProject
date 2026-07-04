@@ -65,7 +65,7 @@ public class updateProfileSteps extends GWD {
         up.updateButton.click();
     }
 
-    @Then("User must see")
+    @Then("User must see profile updated line")
     public void verifyUpdate() {
         WebElement verifyUpdate = wait.until(ExpectedConditions.visibilityOf(up.verifyUpdate));
 

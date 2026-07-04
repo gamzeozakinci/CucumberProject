@@ -1,24 +1,16 @@
 package Parabank.stepDefinitions;
 
 import Parabank.pages.BillPayPage;
-import Parabank.utils.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
-import java.time.Duration;
 
 import static Parabank.utils.GWD.wait;
 import static org.testng.Assert.assertTrue;
 
-public class billPay {
+public class billPaySteps {
 
     BillPayPage bp = new BillPayPage();
 
