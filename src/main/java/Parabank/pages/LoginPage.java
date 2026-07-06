@@ -20,4 +20,9 @@ public class LoginPage {
     @FindBy(xpath = "//input[@value=\"Log In\"]")
     public WebElement loginButton;
 
+    @FindBy(css = "p.error")
+    public WebElement invalidText;
+
+
+
 }

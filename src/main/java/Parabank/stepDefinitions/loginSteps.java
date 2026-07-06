@@ -5,7 +5,11 @@ import Parabank.utils.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+
+import static Parabank.utils.GWD.wait;
 
 public class loginSteps {
 
@@ -32,11 +36,18 @@ public class loginSteps {
     }
 
     @Then("the URL should contain {string}")
-    public void checkLogin(String url) {
-
+    public void checkLogin(String url) throws InterruptedException {
+        Thread.sleep(2000);
         String currentUrl = GWD.getDriver().getCurrentUrl();
         Assert.assertTrue(currentUrl.contains(url));
 
+    }
+
+    @Then("error text appears on the screen")
+    public void errorText() throws InterruptedException {
+        Thread.sleep(2000);
+        WebElement error = wait.until(ExpectedConditions.visibilityOf(lp.invalidText));
+        Assert.assertTrue(error.isDisplayed());
 
     }
 }
