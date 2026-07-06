@@ -21,5 +21,7 @@ Feature: Pay Bill
 
 
     Examples:
-      | payee | address   | city  | state  | zipcode | phone      | account | vaccount | amount  |
-      | Gamze | Konyaalti | izmir | Turkey | 07070   | 0554314212 | 121212  | 121212   | 1000000 |
+      | payee       | address    | city    | state  | zipcode | phone      | account | vaccount | amount |
+      | Electricity | Konyaalti  | Antalya | Turkey | 32312   | 0553314212 | 154532  | 154532   | 85     |
+      | Water       | Karsiyaka  | izmir   | Turkey | 666755  | 0554414212 | 121212  | 121212   | 45     |
+      | Natural gas | Manchester | Spain   | Turkey | 112211  | 0523332332 | 187874  | 187874   | 120    |

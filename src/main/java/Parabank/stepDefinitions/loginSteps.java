@@ -48,6 +48,7 @@ public class loginSteps {
         Thread.sleep(2000);
         WebElement error = wait.until(ExpectedConditions.visibilityOf(lp.invalidText));
         Assert.assertTrue(error.isDisplayed());
+        System.out.println(error.getText());
 
     }
 }
