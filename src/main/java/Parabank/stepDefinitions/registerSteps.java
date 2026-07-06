@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-public class RegisterSteps extends GWD {
+public class registerSteps extends GWD {
 
 
     RegisterPage rp = new RegisterPage();

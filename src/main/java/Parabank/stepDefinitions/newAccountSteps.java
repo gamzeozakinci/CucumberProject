@@ -22,10 +22,17 @@ public class newAccountSteps extends GWD {
         ona.openAccountButton.click();
     }
 
-    @And("User chooses account type")
-    public void chooseAccountType() {
+    @And("User chooses account type as checking")
+    public void checkingType() {
         Select select = new Select(ona.selectAccountType);
         select.selectByValue("0");
+        ;
+    }
+
+    @And("User chooses account type as saving")
+    public void savingType() {
+        Select select = new Select(ona.selectAccountType);
+        select.selectByValue("1");
         ;
     }
 
