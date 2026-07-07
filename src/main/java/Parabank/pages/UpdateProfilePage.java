@@ -40,4 +40,22 @@ public class UpdateProfilePage {
     @FindBy(css = "#updateProfileResult .title")
     public WebElement verifyUpdate;
 
+    @FindBy(css = "span#firstName-error")
+    public WebElement errorMessageName;
+
+    @FindBy(css = "span#lastName-error")
+    public WebElement errorMessagelastName;
+
+    @FindBy(css = "span#street-error")
+    public WebElement errorMessageAddress;
+
+    @FindBy(css = "span#city-error")
+    public WebElement errorMessageCity;
+
+    @FindBy(css = "span#state-error")
+    public WebElement errorMessageState;
+
+    @FindBy(css = "span#zipCode-error")
+    public WebElement errorMessageZipcode;
+
 }
