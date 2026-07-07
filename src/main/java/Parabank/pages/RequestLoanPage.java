@@ -29,4 +29,7 @@ public class RequestLoanPage {
     @FindBy(css = "#requestLoanResult .title")
     public WebElement verifyLoan;
 
+    @FindBy(css = "#loanStatus")
+    public WebElement errorLoan;
+
 }

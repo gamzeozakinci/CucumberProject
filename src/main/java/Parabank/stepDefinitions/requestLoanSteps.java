@@ -17,30 +17,27 @@ public class requestLoanSteps extends GWD {
     @When("User clicks request loan")
     public void clickRequestLoan() {
         rl.requestLoanButton.click();
-
     }
 
-    @And("User enters amount of loan")
-    public void enterAmountOfLoan() {
-        rl.loanAmount.sendKeys("100");
-
+    @And("User enters amount of loan {string}")
+    public void enterAmountOfLoan(String loanAmount) {
+        rl.loanAmount.sendKeys(loanAmount);
     }
 
-    @And("User enters down payment")
-    public void enterDownPayment() {
-        rl.downPayment.sendKeys("10");
+    @And("User enters down payment {string}")
+    public void enterDownPayment(String downPayment) {
+        rl.downPayment.sendKeys(downPayment);
     }
 
-    @And("User chooses an account")
-    public void chooseAccount() {
+    @And("User chooses an account {string}")
+    public void chooseAccount(String accountNumber) {
         Select accSelect = new Select(rl.accountSelect);
-        accSelect.selectByValue("13455");
-
+        accSelect.selectByValue(accountNumber);
     }
 
     @And("User clicks apply now button")
     public void clickApplyNowButton() throws InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         rl.applyButton.click();
     }
 
@@ -50,4 +47,10 @@ public class requestLoanSteps extends GWD {
         Assert.assertTrue(verifyLoanPro.isDisplayed());
     }
 
+    @Then("User must see error message on screen")
+    public void verifyLoanError() {
+        WebElement verifyError = wait.until(ExpectedConditions.visibilityOf(rl.errorLoan));
+        Assert.assertTrue(verifyError.getText().equals("Denied"));
+
+    }
 }
