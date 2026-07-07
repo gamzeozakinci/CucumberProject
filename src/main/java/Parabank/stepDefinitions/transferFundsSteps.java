@@ -99,23 +99,14 @@ public class transferFundsSteps extends GWD {
         tf.transactionIdinput.sendKeys(transactionID);
     }
 
-    @And("User clicks find transactions")
+    @And("User clicks find transactions button")
     public void findButton() {
-        tf.findTransButton.click();
+        tf.clickFindtrans.click();
     }
 
     @Then("User verifies that the transaction is made")
     public void verifyTransaction() {
+        Assert.assertTrue(tf.verifyTransactionid.getText().contains("received"));
 
     }
-
-
-
-
-
-
-
-
-
-
 }

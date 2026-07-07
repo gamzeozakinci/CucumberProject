@@ -50,12 +50,9 @@ public class TransferFundsPage {
     public WebElement transactionIdinput;
 
     @FindBy(css = "#findbyid")
-    public WebElement getFindTransButton;
+    public WebElement clickFindtrans;
 
-
-
-
-
-
+    @FindBy(css = "div#resultContainer")
+    public WebElement verifyTransactionid;
 
 }
