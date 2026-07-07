@@ -46,6 +46,14 @@ public class TransferFundsPage {
     @FindBy(xpath = "//*[@href=\"transfer.htm\"]")
     public WebElement findTransButton;
 
+    @FindBy(css = "input#transactionId")
+    public WebElement transactionIdinput;
+
+    @FindBy(css = "#findbyid")
+    public WebElement getFindTransButton;
+
+
+
 
 
 

@@ -28,6 +28,7 @@ Feature: Transfer funds
     And User saves transaction id
     And User clicks find transactions
     And User enters transaction id
+    Then User verifies that the transaction is made
 
 
 
