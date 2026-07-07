@@ -5,15 +5,17 @@ import Parabank.utils.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class transferFundsSteps extends GWD {
 
     TransferFundsPage tf = new TransferFundsPage();
+    String transactionID;
 
     @When("User clicks transfer funds")
     public void userClicksTransferFunds() {
@@ -23,21 +25,21 @@ public class transferFundsSteps extends GWD {
 
     @And("User enters the amount to transfer")
     public void userEntersTheAmountToTransfer() {
-        tf.amount.sendKeys("400");
+        tf.amount.sendKeys("50");
 
     }
 
     @And("User chooses account to transfer from")
     public void amountFrom() {
         Select selectAccount = new Select(tf.selectFromAccountId);
-        selectAccount.selectByValue("13677");
+        selectAccount.selectByValue("18339");
 
     }
 
     @And("User chooses account to transfer to")
     public void amountTo() {
         Select selectAccount = new Select(tf.selecttoAccountId);
-        selectAccount.selectByValue("15009");
+        selectAccount.selectByValue("19449");
 
     }
 
@@ -46,11 +48,62 @@ public class transferFundsSteps extends GWD {
         tf.transferButton.click();
     }
 
-    @Then("User must see transfer complete text")
+    @And("User must see transfer complete text")
     public void verifyTransfer() {
         WebElement verify = wait.until(ExpectedConditions.visibilityOf(tf.verifyTransfer));
         Assert.assertTrue(tf.verifyTransfer.isDisplayed());
     }
+
+    @And("User opens account overview to check")
+    public void AccountOverview() throws InterruptedException {
+        WebElement waitAcc = wait.until(ExpectedConditions.elementToBeClickable(tf.accOverviewButton));
+        Thread.sleep(2000);
+        waitAcc.click();
+    }
+
+    @And("User checks transferred account")
+    public void chooseAccount() {
+        tf.chooseAcc.click();
+    }
+
+    @Then("User checks the received amount")
+    public void theReceivedAmount() throws InterruptedException {
+
+        WebElement element = GWD.getDriver().findElement(By.xpath("//*[@href='services.htm']"));
+        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+
+        Assert.assertTrue(tf.receivedAmount.getText().equals("50") && tf.receivedText.getText().contains("Received"));
+        System.out.println(tf.receivedText.getText()); // kontrol
+
+    }
+
+    @And("User chooses transaction to check")
+    public void findTransactionsButton() {
+        tf.receivedText.click();
+
+    }
+
+    @And("User saves transaction id")
+    public void transactionidSave() {
+        transactionID = tf.transactionid.getText();
+    }
+
+    @And("User clicks find transactions")
+    public void transactionButton() {
+        tf.findTransButton.click();
+    }
+
+    @And("User enters transaction id")
+    public void entertransactionid() {
+        tf
+    }
+
+
+
+
+
+
 
 
 }
