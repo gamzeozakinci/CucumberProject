@@ -31,7 +31,7 @@ public class TransferFundsPage {
     @FindBy(xpath = "//*[@href=\"overview.htm\"]")
     public WebElement accOverviewButton;
 
-    @FindBy(xpath = "//*[@href=\"activity.htm?id=19449\"]")
+    @FindBy(xpath = "//*[@href=\"activity.htm?id=16230\"]")
     public WebElement chooseAcc;
 
     @FindBy(xpath = "//table[@id='transactionTable']/tbody/tr[last()]/td[last()]")

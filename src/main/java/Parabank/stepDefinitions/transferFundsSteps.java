@@ -19,7 +19,8 @@ public class transferFundsSteps extends GWD {
 
     @When("User clicks transfer funds")
     public void userClicksTransferFunds() {
-        tf.transferFundsButton.click();
+        WebElement buttonWait = wait.until(ExpectedConditions.elementToBeClickable(tf.transferFundsButton));
+        buttonWait.click();
 
     }
 
@@ -32,19 +33,20 @@ public class transferFundsSteps extends GWD {
     @And("User chooses account to transfer from")
     public void amountFrom() {
         Select selectAccount = new Select(tf.selectFromAccountId);
-        selectAccount.selectByValue("18339");
+        selectAccount.selectByValue("14676");
 
     }
 
     @And("User chooses account to transfer to")
     public void amountTo() {
         Select selectAccount = new Select(tf.selecttoAccountId);
-        selectAccount.selectByValue("19449");
+        selectAccount.selectByValue("16230");
 
     }
 
     @And("User clicks transfer button")
     public void userClicksTransferButton() {
+        WebElement buttonWait = wait.until(ExpectedConditions.elementToBeClickable(tf.transferButton));
         tf.transferButton.click();
     }
 

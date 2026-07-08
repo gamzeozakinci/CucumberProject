@@ -26,5 +26,5 @@ Feature: Request Loan
     Then User must see error message on screen
 
     Examples:
-      | loanAmount | downPayment | accountNumber |
-      | 1004444    | 104343      | 13455         |
+      | loanAmount | downPayment |
+      | 1004444    | 104343      |
