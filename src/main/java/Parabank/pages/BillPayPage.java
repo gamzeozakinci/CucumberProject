@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class BillPayPage {
 
     public BillPayPage() {
+
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
