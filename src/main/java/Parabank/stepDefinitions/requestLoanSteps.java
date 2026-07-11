@@ -50,7 +50,7 @@ public class requestLoanSteps extends GWD {
     @Then("User must see error message on screen")
     public void verifyLoanError() {
         WebElement verifyError = wait.until(ExpectedConditions.visibilityOf(rl.errorLoan));
-        Assert.assertTrue(verifyError.getText().equals("Denied"));
+        Assert.assertEquals(verifyError.getText(), "Denied");
 
     }
 }
