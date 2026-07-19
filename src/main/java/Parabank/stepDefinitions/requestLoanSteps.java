@@ -43,13 +43,13 @@ public class requestLoanSteps extends GWD {
 
     @Then("User must see Loan Request Processed")
     public void verifyLoan() {
-        WebElement verifyLoanPro = wait.until(ExpectedConditions.visibilityOf(rl.verifyLoan));
+        WebElement verifyLoanPro = GWD.getWait().until(ExpectedConditions.visibilityOf(rl.verifyLoan));
         Assert.assertTrue(verifyLoanPro.isDisplayed());
     }
 
     @Then("User must see error message on screen")
     public void verifyLoanError() {
-        WebElement verifyError = wait.until(ExpectedConditions.visibilityOf(rl.errorLoan));
+        WebElement verifyError = GWD.getWait().until(ExpectedConditions.visibilityOf(rl.errorLoan));
         Assert.assertEquals(verifyError.getText(), "Denied");
 
     }

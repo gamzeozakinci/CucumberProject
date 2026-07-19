@@ -19,7 +19,7 @@ public class transferFundsSteps extends GWD {
 
     @When("User clicks transfer funds")
     public void userClicksTransferFunds() {
-        WebElement buttonWait = wait.until(ExpectedConditions.elementToBeClickable(tf.transferFundsButton));
+        WebElement buttonWait = GWD.getWait().until(ExpectedConditions.elementToBeClickable(tf.transferFundsButton));
         buttonWait.click();
 
     }
@@ -46,19 +46,19 @@ public class transferFundsSteps extends GWD {
 
     @And("User clicks transfer button")
     public void userClicksTransferButton() {
-        WebElement buttonWait = wait.until(ExpectedConditions.elementToBeClickable(tf.transferButton));
+        WebElement buttonWait = GWD.getWait().until(ExpectedConditions.elementToBeClickable(tf.transferButton));
         tf.transferButton.click();
     }
 
     @And("User must see transfer complete text")
     public void verifyTransfer() {
-        WebElement verify = wait.until(ExpectedConditions.visibilityOf(tf.verifyTransfer));
+        WebElement verify = GWD.getWait().until(ExpectedConditions.visibilityOf(tf.verifyTransfer));
         Assert.assertTrue(tf.verifyTransfer.isDisplayed());
     }
 
     @And("User opens account overview to check")
     public void AccountOverview() throws InterruptedException {
-        WebElement waitAcc = wait.until(ExpectedConditions.elementToBeClickable(tf.accOverviewButton));
+        WebElement waitAcc = GWD.getWait().until(ExpectedConditions.elementToBeClickable(tf.accOverviewButton));
         Thread.sleep(2000);
         waitAcc.click();
     }

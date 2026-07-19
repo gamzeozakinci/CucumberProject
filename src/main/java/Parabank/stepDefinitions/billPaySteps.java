@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import static Parabank.utils.GWD.wait;
+import Parabank.utils.GWD;
 import static org.testng.Assert.assertTrue;
 
 public class billPaySteps {
@@ -72,7 +72,7 @@ public class billPaySteps {
     @Then("User verifies that the payment is complete")
     public void verifyPaymentComplete() {
 
-        WebElement verify = wait.until(ExpectedConditions.visibilityOf(bp.verifyBillPay));
+        WebElement verify = GWD.getWait().until(ExpectedConditions.visibilityOf(bp.verifyBillPay));
         assertTrue(verify.isDisplayed());
 
     }

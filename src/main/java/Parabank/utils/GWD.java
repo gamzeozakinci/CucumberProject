@@ -7,18 +7,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class GWD {
 
+    private static final Logger logger = LoggerFactory.getLogger(GWD.class);
+
     public static ThreadLocal<WebDriver> threads = new ThreadLocal<>();
-    public static WebDriverWait wait;
+    public static ThreadLocal<WebDriverWait> waitThreads = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
 
         if (threads.get() == null) {
+            logger.info("No driver found for thread [{}], creating new one", Thread.currentThread().getName());
 
             WebDriverManager.chromedriver().setup();
 
@@ -27,7 +32,6 @@ public class GWD {
             Map<String, Object> prefs = new HashMap<>();
             prefs.put("credentials_enable_service", false);
             prefs.put("profile.password_manager_enabled", false);
-
             prefs.put("profile.password_manager_leak_detection", false);
 
             options.setExperimentalOption("prefs", prefs);
@@ -36,6 +40,8 @@ public class GWD {
             options.addArguments("--disable-features=PasswordLeakDetection");
 
             WebDriver driver = new ChromeDriver(options);
+            logger.info("New ChromeDriver instance created on thread [{}], driver hash: {}",
+                    Thread.currentThread().getName(), System.identityHashCode(driver));
 
             driver.manage().window().maximize();
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
@@ -43,7 +49,13 @@ public class GWD {
 
             threads.set(driver);
 
-            wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            waitThreads.set(driverWait);
+            logger.debug("New WebDriverWait created for thread [{}]", Thread.currentThread().getName());
+
+        } else {
+            logger.debug("Reusing existing driver on thread [{}], driver hash: {}",
+                    Thread.currentThread().getName(), System.identityHashCode(threads.get()));
         }
 
         return threads.get();
@@ -51,12 +63,25 @@ public class GWD {
 
     public void quitDriver() {
         if (threads.get() != null) {
-            threads.get().quit(); // Tarayıcıyı kapat
+            WebDriver driver = threads.get();
+            logger.info("Quitting driver on thread [{}], driver hash: {}",
+                    Thread.currentThread().getName(), System.identityHashCode(driver));
+
+            driver.quit(); // Tarayıcıyı kapat
             threads.set(null);    // Hafızayı temizle
+            threads.remove();     // ThreadLocal referansını tamamen temizle
+
+            waitThreads.set(null);
+            waitThreads.remove();
+
+            logger.info("Driver quit complete and ThreadLocal cleared on thread [{}]",
+                    Thread.currentThread().getName());
+        } else {
+            logger.warn("quitDriver() called on thread [{}] but no driver was set", Thread.currentThread().getName());
         }
     }
 
-    public WebDriverWait getWait() {
-        return wait;
+    public static WebDriverWait getWait() {
+        return waitThreads.get();
     }
 }

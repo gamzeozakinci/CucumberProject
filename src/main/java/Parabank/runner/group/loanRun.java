@@ -1,4 +1,13 @@
 package Parabank.runner.group;
 
-public class loanRun {
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
+@CucumberOptions(
+        features = "src/test/java/features/Tests",
+        glue = {"Parabank.stepDefinitions", "Parabank.Hooks"},
+        tags = "@Load"
+)
+
+public class loanRun extends AbstractTestNGCucumberTests {
 }

@@ -69,7 +69,7 @@ public class updateProfileSteps extends GWD {
 
     @Then("User must see profile updated line")
     public void verifyUpdate() {
-        WebElement verifyUpdate = wait.until(ExpectedConditions.visibilityOf(up.verifyUpdate));
+        WebElement verifyUpdate = GWD.getWait().until(ExpectedConditions.visibilityOf(up.verifyUpdate));
         assert verifyUpdate.isDisplayed();
     }
 

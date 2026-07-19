@@ -49,7 +49,7 @@ public class newAccountSteps extends GWD {
     @Then("User sees account opened on the screen")
     public void accountVerify() {
 
-        WebElement verify = wait.until(ExpectedConditions.visibilityOf(ona.openverify));
+        WebElement verify = GWD.getWait().until(ExpectedConditions.visibilityOf(ona.openverify));
         Assert.assertTrue(verify.isDisplayed());
     }
 
