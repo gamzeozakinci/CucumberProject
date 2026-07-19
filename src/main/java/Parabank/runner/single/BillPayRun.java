@@ -1,12 +1,11 @@
-package Parabank.runner;
+package Parabank.runner.single;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
-
 @CucumberOptions(
-        features = "src/test/java/features/Tests/login.feature",
+        features = "src/test/java/features/Tests/billPay.feature",
         glue = {"Parabank.stepDefinitions", "Parabank.Hooks"})
 
-public class LoginRun extends AbstractTestNGCucumberTests {
+public class BillPayRun extends AbstractTestNGCucumberTests {
 }

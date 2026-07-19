@@ -3,7 +3,7 @@ Feature: Register User
   Background:
     Given User navigates to main page
 
-  @accounts @smoke @regression
+  @Accounts @Smoke @Regression
   Scenario: Successful register with credentials
     When the user clicks register
     And the user enters name
