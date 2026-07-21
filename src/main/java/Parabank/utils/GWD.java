@@ -40,8 +40,7 @@ public class GWD {
             options.addArguments("--disable-features=PasswordLeakDetection");
 
             WebDriver driver = new ChromeDriver(options);
-            logger.info("New ChromeDriver instance created on thread [{}], driver hash: {}",
-                    Thread.currentThread().getName(), System.identityHashCode(driver));
+            logger.info("New ChromeDriver instance created");
 
             driver.manage().window().maximize();
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
@@ -51,11 +50,10 @@ public class GWD {
 
             WebDriverWait driverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
             waitThreads.set(driverWait);
-            logger.debug("New WebDriverWait created for thread [{}]", Thread.currentThread().getName());
+            logger.debug("New WebDriverWait created");
 
         } else {
-            logger.debug("Reusing existing driver on thread [{}], driver hash: {}",
-                    Thread.currentThread().getName(), System.identityHashCode(threads.get()));
+            logger.debug("Reusing existing driver");
         }
 
         return threads.get();
@@ -64,8 +62,7 @@ public class GWD {
     public void quitDriver() {
         if (threads.get() != null) {
             WebDriver driver = threads.get();
-            logger.info("Quitting driver on thread [{}], driver hash: {}",
-                    Thread.currentThread().getName(), System.identityHashCode(driver));
+            logger.info("Quitting driver");
 
             driver.quit(); // Tarayıcıyı kapat
             threads.set(null);    // Hafızayı temizle
@@ -74,10 +71,9 @@ public class GWD {
             waitThreads.set(null);
             waitThreads.remove();
 
-            logger.info("Driver quit complete and ThreadLocal cleared on thread [{}]",
-                    Thread.currentThread().getName());
+            logger.info("Driver quit complete and ThreadLocal cleared");
         } else {
-            logger.warn("quitDriver() called on thread [{}] but no driver was set", Thread.currentThread().getName());
+            logger.warn("quitDriver() called but no driver was set");
         }
     }
 

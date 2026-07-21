@@ -19,19 +19,19 @@ public class loginSteps {
 
     @When("User enters username {string}")
     public void enterUsername(String username) {
-        logger.info("Entering username: {} on thread [{}]", username, Thread.currentThread().getName());
+        logger.info("Entering username: {}", username);
         lp.username.sendKeys(username);
     }
 
     @And("User enters password {string}")
     public void enterPassword(String password) {
-        logger.info("Entering password on thread [{}]", Thread.currentThread().getName());
+        logger.info("Entering password");
         lp.password.sendKeys(password);
     }
 
     @And("User clicks log in")
     public void clickLOGIN() {
-        logger.info("Clicking login button on thread [{}]", Thread.currentThread().getName());
+        logger.info("Clicking login button");
         lp.loginButton.click();
     }
 
@@ -39,15 +39,15 @@ public class loginSteps {
     public void checkLogin(String url) throws InterruptedException {
         Thread.sleep(2000);
         String currentUrl = GWD.getDriver().getCurrentUrl();
-        logger.info("Expected URL to contain [{}], actual URL: [{}] on thread [{}]",
-                url, currentUrl, Thread.currentThread().getName());
+        logger.info("Expected URL to contain [{}], actual URL: [{}]",
+                url, currentUrl);
         Assert.assertTrue(currentUrl.contains(url));
     }
 
     @Then("error text appears on the screen")
     public void errorText() throws InterruptedException {
         Thread.sleep(2000);
-        logger.info("Waiting for error text to be visible on thread [{}]", Thread.currentThread().getName());
+        logger.info("Waiting for error text to be visible");
         WebElement error = GWD.getWait().until(ExpectedConditions.visibilityOf(lp.invalidText));
         Assert.assertTrue(error.isDisplayed());
         logger.info("Error text displayed: {}", error.getText());

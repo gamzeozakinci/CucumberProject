@@ -1,26 +1,43 @@
-2026-07-21 21:36:36 [main] INFO  Parabank.utils.GWD - No driver found for thread [main], creating new one
-2026-07-21 21:36:37 [main] INFO  Parabank.utils.GWD - New ChromeDriver instance created on thread [main], driver hash: 1834755909
-2026-07-21 21:36:39 [main] INFO  Parabank.stepDefinitions.loginSteps - Entering username: gamze on thread [main]
-2026-07-21 21:36:39 [main] INFO  Parabank.stepDefinitions.loginSteps - Entering password on thread [main]
-2026-07-21 21:36:39 [main] INFO  Parabank.stepDefinitions.loginSteps - Clicking login button on thread [main]
-2026-07-21 21:36:41 [main] INFO  Parabank.stepDefinitions.loginSteps - Expected URL to contain [overview], actual URL: [https://parabank.parasoft.com/parabank/login.htm] on thread [main]
-2026-07-21 21:36:41 [main] INFO  Parabank.utils.GWD - Quitting driver on thread [main], driver hash: 1834755909
-2026-07-21 21:36:41 [main] INFO  Parabank.utils.GWD - Driver quit complete and ThreadLocal cleared on thread [main]
-2026-07-21 21:36:41 [main] INFO  Parabank.utils.GWD - No driver found for thread [main], creating new one
-2026-07-21 21:36:42 [main] INFO  Parabank.utils.GWD - New ChromeDriver instance created on thread [main], driver hash: 1755811644
-2026-07-21 21:36:44 [main] INFO  Parabank.stepDefinitions.loginSteps - Entering username: user on thread [main]
-2026-07-21 21:36:44 [main] INFO  Parabank.stepDefinitions.loginSteps - Entering password on thread [main]
-2026-07-21 21:36:44 [main] INFO  Parabank.stepDefinitions.loginSteps - Clicking login button on thread [main]
-2026-07-21 21:36:46 [main] INFO  Parabank.stepDefinitions.loginSteps - Waiting for error text to be visible on thread [main]
-2026-07-21 21:36:46 [main] INFO  Parabank.stepDefinitions.loginSteps - Error text displayed: The username and password could not be verified.
-2026-07-21 21:36:46 [main] INFO  Parabank.utils.GWD - Quitting driver on thread [main], driver hash: 1755811644
-2026-07-21 21:36:46 [main] INFO  Parabank.utils.GWD - Driver quit complete and ThreadLocal cleared on thread [main]
-2026-07-21 21:36:46 [main] INFO  Parabank.utils.GWD - No driver found for thread [main], creating new one
-2026-07-21 21:36:47 [main] INFO  Parabank.utils.GWD - New ChromeDriver instance created on thread [main], driver hash: 992302041
-2026-07-21 21:36:52 [main] INFO  Parabank.stepDefinitions.loginSteps - Entering username:  on thread [main]
-2026-07-21 21:36:52 [main] INFO  Parabank.stepDefinitions.loginSteps - Entering password on thread [main]
-2026-07-21 21:36:52 [main] INFO  Parabank.stepDefinitions.loginSteps - Clicking login button on thread [main]
-2026-07-21 21:36:54 [main] INFO  Parabank.stepDefinitions.loginSteps - Waiting for error text to be visible on thread [main]
-2026-07-21 21:36:54 [main] INFO  Parabank.stepDefinitions.loginSteps - Error text displayed: Please enter a username and password.
-2026-07-21 21:36:54 [main] INFO  Parabank.utils.GWD - Quitting driver on thread [main], driver hash: 992302041
-2026-07-21 21:36:54 [main] INFO  Parabank.utils.GWD - Driver quit complete and ThreadLocal cleared on thread [main]
+2026-07-21 21:54:27 [main] INFO  Parabank.utils.GWD - No driver found for thread [main], creating new one
+2026-07-21 21:54:28 [main] INFO  Parabank.utils.GWD - New ChromeDriver instance created
+2026-07-21 21:54:31 [main] INFO  Parabank.utils.GWD - Quitting driver
+2026-07-21 21:54:31 [main] INFO  Parabank.utils.GWD - Driver quit complete and ThreadLocal cleared
+2026-07-21 21:54:53 [main] INFO  Parabank.utils.GWD - No driver found for thread [main], creating new one
+2026-07-21 21:54:54 [main] INFO  Parabank.utils.GWD - New ChromeDriver instance created
+2026-07-21 21:54:57 [main] INFO  Parabank.stepDefinitions.billPaySteps - Clicking bill pay
+2026-07-21 21:54:57 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee name: Electricity
+2026-07-21 21:54:57 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee address: Konyaalti
+2026-07-21 21:54:57 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee city: Antalya
+2026-07-21 21:54:57 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee state: Turkey
+2026-07-21 21:54:57 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee zipcode: 32312
+2026-07-21 21:54:57 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee phone number: 0553314212
+2026-07-21 21:54:57 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee account number: 154532
+2026-07-21 21:54:57 [main] INFO  Parabank.stepDefinitions.billPaySteps - Verifying payee account number: 154532
+2026-07-21 21:54:57 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payment amount: 85
+2026-07-21 21:54:57 [main] INFO  Parabank.stepDefinitions.billPaySteps - Clicking send payment
+2026-07-21 21:54:58 [main] INFO  Parabank.stepDefinitions.billPaySteps - Waiting for payment confirmation to be visible
+2026-07-21 21:54:58 [main] INFO  Parabank.stepDefinitions.billPaySteps - Payment confirmation displayed: Bill Payment Complete
+2026-07-21 21:54:58 [main] INFO  Parabank.utils.GWD - Quitting driver
+2026-07-21 21:54:58 [main] INFO  Parabank.utils.GWD - Driver quit complete and ThreadLocal cleared
+2026-07-21 21:54:58 [main] INFO  Parabank.utils.GWD - No driver found for thread [main], creating new one
+2026-07-21 21:54:59 [main] INFO  Parabank.utils.GWD - New ChromeDriver instance created
+2026-07-21 21:55:01 [main] INFO  Parabank.stepDefinitions.billPaySteps - Clicking bill pay
+2026-07-21 21:55:02 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee name: Water
+2026-07-21 21:55:02 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee address: Karsiyaka
+2026-07-21 21:55:02 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee city: izmir
+2026-07-21 21:55:02 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee state: Turkey
+2026-07-21 21:55:02 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee zipcode: 666755
+2026-07-21 21:55:02 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee phone number: 0554414212
+2026-07-21 21:55:02 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payee account number: 121212
+2026-07-21 21:55:02 [main] INFO  Parabank.stepDefinitions.billPaySteps - Verifying payee account number: 121212
+2026-07-21 21:55:02 [main] INFO  Parabank.stepDefinitions.billPaySteps - Entering payment amount: 45
+2026-07-21 21:55:02 [main] INFO  Parabank.stepDefinitions.billPaySteps - Clicking send payment
+2026-07-21 21:55:02 [main] INFO  Parabank.stepDefinitions.billPaySteps - Waiting for payment confirmation to be visible
+2026-07-21 21:55:03 [main] INFO  Parabank.stepDefinitions.billPaySteps - Payment confirmation displayed: Bill Payment Complete
+2026-07-21 21:55:03 [main] INFO  Parabank.utils.GWD - Quitting driver
+2026-07-21 21:55:03 [main] INFO  Parabank.utils.GWD - Driver quit complete and ThreadLocal cleared
+2026-07-21 21:55:03 [main] INFO  Parabank.utils.GWD - No driver found for thread [main], creating new one
+2026-07-21 21:55:03 [main] INFO  Parabank.utils.GWD - New ChromeDriver instance created
+2026-07-21 21:55:05 [main] INFO  Parabank.stepDefinitions.billPaySteps - Clicking bill pay
+2026-07-21 21:55:08 [main] INFO  Parabank.utils.GWD - Quitting driver
+2026-07-21 21:55:08 [main] INFO  Parabank.utils.GWD - Driver quit complete and ThreadLocal cleared
