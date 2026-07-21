@@ -23,4 +23,14 @@ public class OpenNewAccountPage {
     @FindBy(css = "#openAccountResult h1")
     public WebElement openverify;
 
+    @FindBy(css = "a#newAccountId")
+    public WebElement accCode;
+
+    @FindBy(xpath = "//*[@id=\"type\"]/option[1]")
+    public WebElement checAccountType;
+
+    @FindBy(xpath = "//*[@id=\"type\"]/option[2]")
+    public WebElement saveAccountType;
+
+
 }

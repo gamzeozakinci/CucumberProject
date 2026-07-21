@@ -19,6 +19,11 @@ public class newAccountSteps extends GWD {
 
     private static final Logger logger = LoggerFactory.getLogger(newAccountSteps.class);
 
+    public static String checkingAccno;
+    public static String savingAccno;
+    public static String accType;
+
+
     OpenNewAccountPage ona = new OpenNewAccountPage();
 
     @When("User clicks to Open New Account")
@@ -32,6 +37,7 @@ public class newAccountSteps extends GWD {
         logger.info("Selecting account type: checking");
         Select select = new Select(ona.selectAccountType);
         select.selectByValue("0");
+        accType = ona.checAccountType.getText();
     }
 
     @And("User chooses account type as saving")
@@ -39,6 +45,7 @@ public class newAccountSteps extends GWD {
         logger.info("Selecting account type: saving");
         Select select = new Select(ona.selectAccountType);
         select.selectByValue("1");
+        accType = ona.saveAccountType.getText();
     }
 
     @And("User clicks open new account button")
@@ -56,6 +63,17 @@ public class newAccountSteps extends GWD {
         logger.info("Waiting for account-opened confirmation to be visible");
         WebElement verify = GWD.getWait().until(ExpectedConditions.visibilityOf(ona.openverify));
         Assert.assertTrue(verify.isDisplayed());
+
+        if (accType.equalsIgnoreCase("CHECKING")) {
+            checkingAccno = ona.accCode.getText();
+            System.out.println("Checking accno: " + checkingAccno);
+        } else {
+            savingAccno = ona.accCode.getText();
+            System.out.println("Saving accno: " + savingAccno);
+        }
+
         logger.info("Account opened confirmation displayed: {}", verify.getText());
+
+        System.out.println("Bulunan degerler: " + checkingAccno + savingAccno);
     }
 }

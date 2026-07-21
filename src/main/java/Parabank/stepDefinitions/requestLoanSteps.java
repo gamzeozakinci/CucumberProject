@@ -12,6 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 
+import static Parabank.stepDefinitions.newAccountSteps.checkingAccno;
+import static Parabank.stepDefinitions.newAccountSteps.savingAccno;
+
 public class requestLoanSteps extends GWD {
 
     private static final Logger logger = LoggerFactory.getLogger(requestLoanSteps.class);
@@ -56,13 +59,15 @@ public class requestLoanSteps extends GWD {
         WebElement verifyLoanPro = GWD.getWait().until(ExpectedConditions.visibilityOf(rl.verifyLoan));
         Assert.assertTrue(verifyLoanPro.isDisplayed());
         logger.info("Loan processed confirmation displayed");
+        System.out.println("Bulunan degerler: " + checkingAccno + " " + savingAccno);
     }
 
     @Then("User must see error message on screen")
-    public void verifyLoanError() {
+    public void verifyLoanError() throws InterruptedException {
         logger.info("Waiting for loan error message");
         WebElement verifyError = GWD.getWait().until(ExpectedConditions.visibilityOf(rl.errorLoan));
         String errorText = verifyError.getText();
+        Thread.sleep(4000);
         logger.info("Loan error message displayed: {}", errorText);
         Assert.assertEquals(errorText, "Denied");
     }

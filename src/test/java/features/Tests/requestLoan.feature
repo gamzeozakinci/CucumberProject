@@ -15,7 +15,7 @@ Feature: Request Loan
 
     Examples:
       | loanAmount | downPayment | accountNumber |
-      | 100        | 10          | 13566         |
+      | 100        | 10          | 123827        |
 
   @Loan @Accounts @Regression
   Scenario Outline: Invalid request of loan
