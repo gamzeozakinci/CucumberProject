@@ -84,4 +84,5 @@ public class GWD {
     public static WebDriverWait getWait() {
         return waitThreads.get();
     }
+
 }

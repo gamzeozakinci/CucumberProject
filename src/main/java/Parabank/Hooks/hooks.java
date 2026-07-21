@@ -9,6 +9,7 @@ public class hooks extends GWD {
 
     @Before
     public void setUp() {
+
         System.out.println("--- Senaryo Başladı ---");
     }
 
@@ -18,4 +19,5 @@ public class hooks extends GWD {
         System.out.println("--- Senaryo Bitti, Tarayıcı Kapatılıyor ---");
         quitDriver();
     }
+
 }
