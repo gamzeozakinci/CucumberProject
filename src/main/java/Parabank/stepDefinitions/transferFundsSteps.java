@@ -34,18 +34,18 @@ public class transferFundsSteps extends GWD {
         tf.amount.sendKeys("50");
     }
 
-    @And("User chooses account to transfer from")
-    public void amountFrom() {
-        logger.info("Selecting from-account: 14676");
+    @And("User chooses account to transfer from {string}")
+    public void amountFrom(String accountId) {
+        logger.info("Selecting from-account: " + accountId);
         Select selectAccount = new Select(tf.selectFromAccountId);
-        selectAccount.selectByValue("14676");
+        selectAccount.selectByValue(accountId);
     }
 
-    @And("User chooses account to transfer to")
-    public void amountTo() {
-        logger.info("Selecting to-account: 16230");
+    @And("User chooses account to transfer to {string}")
+    public void amountTo(String accountId) {
+        logger.info("Selecting to-account: " + accountId);
         Select selectAccount = new Select(tf.selecttoAccountId);
-        selectAccount.selectByValue("16230");
+        selectAccount.selectByValue(accountId);
     }
 
     @And("User clicks transfer button")
@@ -65,10 +65,9 @@ public class transferFundsSteps extends GWD {
     }
 
     @And("User opens account overview to check")
-    public void AccountOverview() throws InterruptedException {
+    public void AccountOverview() {
         logger.info("Waiting for account overview button to be clickable");
         WebElement waitAcc = GWD.getWait().until(ExpectedConditions.elementToBeClickable(tf.accOverviewButton));
-        Thread.sleep(2000);
         logger.info("Clicking account overview button");
         waitAcc.click();
     }
@@ -80,7 +79,7 @@ public class transferFundsSteps extends GWD {
     }
 
     @Then("User checks the received amount")
-    public void theReceivedAmount() throws InterruptedException {
+    public void theReceivedAmount() {
         logger.info("Scrolling to services link");
         WebElement element = GWD.getDriver().findElement(By.xpath("//*[@href='services.htm']"));
         JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();

@@ -24,8 +24,7 @@ public class updateProfileSteps extends GWD {
     }
 
     @And("User changes name to {string}")
-    public void changeName(String firstName) throws InterruptedException {
-        Thread.sleep(2000);
+    public void changeName(String firstName) {
         logger.info("Changing first name to: {}", firstName);
         up.firstName.clear();
         up.firstName.sendKeys(firstName);
@@ -74,8 +73,7 @@ public class updateProfileSteps extends GWD {
     }
 
     @And("User clicks update profile")
-    public void clickUpdateProfile() throws InterruptedException {
-        Thread.sleep(2000);
+    public void clickUpdateProfile() {
         logger.info("Clicking update profile");
         up.updateButton.click();
     }
@@ -89,8 +87,7 @@ public class updateProfileSteps extends GWD {
     }
 
     @Then("Clears all the fields")
-    public void clearFields() throws InterruptedException {
-        Thread.sleep(2000);
+    public void clearFields() {
         logger.info("Clearing all profile fields");
         up.firstName.clear();
         up.lastName.clear();

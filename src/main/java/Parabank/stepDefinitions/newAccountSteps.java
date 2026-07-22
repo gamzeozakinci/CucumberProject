@@ -53,8 +53,11 @@ public class newAccountSteps extends GWD {
     @And("User clicks open new account button")
     public void openNewAccountButton() throws InterruptedException {
         logger.info("Waiting for register button to be clickable");
+        Thread.sleep(2000);
+
         Actions actions = new Actions(GWD.getDriver());
         actions.moveToElement(ona.registerButtonS).click().perform();
+
         logger.info("Clicking open new account button");
     }
 
