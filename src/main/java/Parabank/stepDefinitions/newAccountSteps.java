@@ -5,7 +5,9 @@ import Parabank.utils.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -51,11 +53,9 @@ public class newAccountSteps extends GWD {
     @And("User clicks open new account button")
     public void openNewAccountButton() throws InterruptedException {
         logger.info("Waiting for register button to be clickable");
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(ona.registerButtonS));
-        Thread.sleep(4000);
+        Actions actions = new Actions(GWD.getDriver());
+        actions.moveToElement(ona.registerButtonS).click().perform();
         logger.info("Clicking open new account button");
-        ona.registerButtonS.click();
     }
 
     @Then("User sees account opened on the screen")

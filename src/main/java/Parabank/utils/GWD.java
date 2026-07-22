@@ -23,7 +23,7 @@ public class GWD {
     public static WebDriver getDriver() {
 
         if (threads.get() == null) {
-            logger.info("No driver found for thread [{}], creating new one", Thread.currentThread().getName());
+            logger.info("No driver found, creating new one");
 
             WebDriverManager.chromedriver().setup();
 

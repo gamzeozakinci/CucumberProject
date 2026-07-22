@@ -37,7 +37,6 @@ public class loginSteps {
 
     @Then("the URL should contain {string}")
     public void checkLogin(String url) throws InterruptedException {
-        Thread.sleep(2000);
         String currentUrl = GWD.getDriver().getCurrentUrl();
         logger.info("Expected URL to contain [{}], actual URL: [{}]",
                 url, currentUrl);
@@ -46,7 +45,6 @@ public class loginSteps {
 
     @Then("error text appears on the screen")
     public void errorText() throws InterruptedException {
-        Thread.sleep(2000);
         logger.info("Waiting for error text to be visible");
         WebElement error = GWD.getWait().until(ExpectedConditions.visibilityOf(lp.invalidText));
         Assert.assertTrue(error.isDisplayed());
