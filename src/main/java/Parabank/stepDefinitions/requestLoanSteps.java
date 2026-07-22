@@ -47,8 +47,7 @@ public class requestLoanSteps extends GWD {
     }
 
     @And("User clicks apply now button")
-    public void clickApplyNowButton() throws InterruptedException {
-        Thread.sleep(2000);
+    public void clickApplyNowButton() {
         logger.info("Clicking apply now button");
         rl.applyButton.click();
     }
@@ -63,11 +62,10 @@ public class requestLoanSteps extends GWD {
     }
 
     @Then("User must see error message on screen")
-    public void verifyLoanError() throws InterruptedException {
+    public void verifyLoanError() {
         logger.info("Waiting for loan error message");
         WebElement verifyError = GWD.getWait().until(ExpectedConditions.visibilityOf(rl.errorLoan));
         String errorText = verifyError.getText();
-        Thread.sleep(4000);
         logger.info("Loan error message displayed: {}", errorText);
         Assert.assertEquals(errorText, "Denied");
     }

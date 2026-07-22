@@ -5,17 +5,13 @@ import Parabank.utils.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-
-import java.time.Duration;
 
 public class newAccountSteps extends GWD {
 
@@ -54,7 +50,6 @@ public class newAccountSteps extends GWD {
     public void openNewAccountButton() throws InterruptedException {
         logger.info("Waiting for register button to be clickable");
         Thread.sleep(2000);
-
         Actions actions = new Actions(GWD.getDriver());
         actions.moveToElement(ona.registerButtonS).click().perform();
 
