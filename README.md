@@ -54,15 +54,15 @@ CucumberProject/
 
 The automation test suite covers the following core business requirements from Parabank's specifications:
 
-| US ID | Title (TR) | Description | Sample Scenarios |
+| US ID | Title | Description | Sample Scenarios |
 | :--- | :--- | :--- | :--- |
-| **US601** | Yeni Kullanıcı Kaydı | Registration of a new customer with validation of successful account creation. | Valid details registration |
-| **US602** | Kullanıcı Girişi (Login) | Verification of successful and failed authentication processes. | Valid login, Invalid credentials login |
-| **US603** | Fatura Ödeme (Bill Pay) | Utility payment processing for Electricity, Water, and Gas with balance verification. | Payment of Electricity, Water, Gas bills |
-| **US604** | Yeni Banka Hesabı Açma | Creation of Checking and Savings accounts with dynamic balance transfers. | Open checking account, Open savings account |
-| **US605** | Hesaplar Arası Para Transferi | Internal fund transfer between user accounts with Transaction ID validation. | Money transfer validation, Find by transaction ID |
-| **US606** | İletişim Bilgilerini Güncelleme | Editing customer profile information including name, address, and phone number. | Update contact details, Negative/empty input validation |
-| **US607** | Kredi Başvurusu (Loan) | Submission of loan applications with automated processing and feedback validation. | Loan approval (sufficient downpayment), Loan denial |
+| **US601** | Resgister | Registration of a new customer with validation of successful account creation. | Valid details registration |
+| **US602** | Login | Verification of successful and failed authentication processes. | Valid login, Invalid credentials login |
+| **US603** | Bill Pay | Utility payment processing for Electricity, Water, and Gas with balance verification. | Payment of Electricity, Water, Gas bills |
+| **US604** | New Account | Creation of Checking and Savings accounts with dynamic balance transfers. | Open checking account, Open savings account |
+| **US605** | Transfer Funds | Internal fund transfer between user accounts with Transaction ID validation. | Money transfer validation, Find by transaction ID |
+| **US606** | Update Contact Info | Editing customer profile information including name, address, and phone number. | Update contact details, Negative/empty input validation |
+| **US607** | Loan Application| Submission of loan applications with automated processing and feedback validation. | Loan approval (sufficient downpayment), Loan denial |
 
 ---
 
